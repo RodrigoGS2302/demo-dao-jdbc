@@ -16,11 +16,19 @@ public class Program2 {
 		Department department = departmentDao.findById(1);	
 		System.out.println(department);
 
-		System.out.println("\n=== TEST 3: department findAll ====");
+		System.out.println("\n=== TEST 2: department findAll ====");
 		List<Department> list = departmentDao.findAll();
 		for (Department dep : list) {
 			System.out.println(dep);
 		}
+		
+		System.out.println("\n=== TEST 3: department insert ====");
+		// cria um novo Department (id null, só com nome)
+		Department dep = new Department(null, "Games");
+		// chama o método insert
+		departmentDao.insert(dep);
+		// imprime o resultado
+		System.out.println("Inserted! New id = " + dep.getId());
 		
 	}
 	
