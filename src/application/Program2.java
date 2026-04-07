@@ -23,13 +23,26 @@ public class Program2 {
 		}
 		
 		System.out.println("\n=== TEST 3: department insert ====");
-		// cria um novo Department (id null, só com nome)
 		Department dep = new Department(null, "Games");
-		// chama o método insert
 		departmentDao.insert(dep);
-		// imprime o resultado
-		System.out.println("Inserted! New id = " + dep.getId());
+		System.out.println("Inserted! New id = " + dep.getId());	
 		
-	}
+		System.out.println("\n=== TEST 4: department update ====");
+		Department dep1 = departmentDao.findById(1);
+		dep1.setName("cell phones");
+		departmentDao.update(dep1);
+		System.out.println("Update completed! " + dep);
+		
+
 	
+	
+		}
+	
+	
+		
+
+		
+	
+		
+		
 }
